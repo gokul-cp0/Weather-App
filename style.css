@@ -1,0 +1,153 @@
+*{
+    padding:0 ;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+}
+body{
+    overflow: hidden;
+}
+.background {
+    position: absolute;
+    inset: 0px;
+    background: url('assets/bg.webp') no-repeat center center/cover;
+    z-index: -1;
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.weatherBox{
+    width: 320px;
+    height: 510px;
+    border-radius:20px;
+    padding: 25px;
+    background: linear-gradient(to top,rgba(255, 255, 255, 0.15),rgba(16, 60, 52, 0.2));
+}
+.weather-input{
+    display: flex;
+    background-color: rgba(208, 205, 205, 0.484);
+    border-radius: 20px;
+    animation: fade .3s ease-in-out;
+}
+.search-button{
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    margin-left: 6px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    margin-right: 15px;
+}
+.search-button:active{
+    transform: scale(0.9);
+}
+.weather-input input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 12px 0px 12px 16px;
+    border-radius: 20px;
+}
+.weather-input input::placeholder{
+    color: white;
+}
+.place-date{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0px 0px;
+    animation: fade .3s ease-in-out;
+}
+.date-span{
+    font-size: 12px;
+}
+.degree-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.degree-box img{
+    width: 150px;
+    animation: fade .3s ease-in-out;
+}
+.celsius-box{
+    text-align: center;
+    animation: fade .3s ease-in-out;
+}
+.celsius-box span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.analyse-box{
+    display: flex;
+    justify-content: space-between;
+    line-height: 20px;
+    padding:30px 0px 0px;
+}
+.analyse-box .text{
+    margin-left: 10px;
+}
+.humidity,.wind-speed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    animation: fade .3s ease-in-out;
+}
+.dayVice-weather{
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+.dayBy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius:10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    line-height: 25px;
+    margin-top: 10px;
+}
+.dayBy img{
+    width: 30px;
+}
+.dayBy p{
+    font-size: 13px;
+    font-weight: 500;
+}
+.Error-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    animation: fade .3s ease-in-out;
+}
+.Error-section img{
+    width: 250px;
+}
+.Error-section h1{
+    margin:20px 0 12px;
+}

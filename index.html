@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Weather</title>
+</head>
+<body>
+    <div class="background"></div>
+
+  <div class="content">
+   <div class="weatherBox">
+    <div class="weather-input">
+      <input type="text" name="city" class="searchInput" placeholder="Search City">
+      <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <section class="containerBody" style="display:none ;">
+      <div class="place-date">
+        <h4><i class="fa-solid fa-location-arrow"></i> <span class="city-name"></span></h4>
+        <span class="date-span"></span>
+      </div>
+      <div class="degree-box">
+        <img  class="weather-img" alt="weather icon">
+        <div class="celsius-box">
+          <h2 class="temperature"></h2>
+          <span class="weather-condition"></span>
+        </div>
+      </div>
+      <div class="analyse-box">
+        <div class="humidity">
+          <span class="material-symbols-outlined" style="font-size: 30px;vertical-align: middle;">water_drop</span>
+          <span class="text">Humidity <h5 class="humidity-txt"></h5></span>
+        </div>
+        <div class="wind-speed">
+          <i class="fa-solid fa-wind" style="font-size: 20px;"></i>
+          <span class="text">Wind Speed <h5 class="speed-txt"></h5></span>
+        </div>
+      </div>
+      <div class="analyse-box">
+        <div class="humidity">
+          <span class="material-symbols-outlined" style="font-size: 30px;vertical-align: middle;transform: rotate(242deg);">explore</span>  
+          <span class="text">Wind Direction <h5 class="direction-txt"></h5></span>
+        </div>
+        <div class="wind-speed">
+          <span class="material-symbols-outlined" style="font-size: 30px;vertical-align: middle;">speed</span>
+          <span class="text">Pressure<h5 class="pressure-txt"></h5></span>
+        </div>
+      </div>
+    </section>
+    <section class="search-city Error-section">
+        <img src="assets/ErrorMsg/search-city.png" alt="">
+        <h1>Search City</h1>
+        <span>Time to meet your city's weather mood!</span>
+    </section>
+    <section class="not-found Error-section" style="display: none;">
+        <img src="assets/ErrorMsg/not-found.png" alt="">
+        <h1>Oops !!!</h1>
+        <span>That city must be on Mars... We only cover Earth!</span>
+    </section>
+   </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
