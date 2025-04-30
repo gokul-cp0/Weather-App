@@ -15,7 +15,8 @@ const weatherImg=document.querySelector('.weather-img');
 
 const handleSearch=()=>{
     if(searchInput.value.trim() != '' ){
-        fetchApi(searchInput.value);
+        const apiKey='55b10d28aef12526a17a7a9e412c9427';
+        fetchApi(searchInput.value,apiKey);
         searchInput.value='';
     };
 };
@@ -23,9 +24,9 @@ searchButton.addEventListener('click',handleSearch);
 searchInput.addEventListener('keydown',(event)=>{
     if(event.key == 'Enter' ) handleSearch();
 });
-const fetchApi=async (cityName) => {
+const fetchApi=async (cityName,apiKey) => {
     try {
-        const response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=55b10d28aef12526a17a7a9e412c9427&units=metric`);
+        const response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
         const resData= await response.json();
         return mainFunction(resData);
     } catch (error) {
