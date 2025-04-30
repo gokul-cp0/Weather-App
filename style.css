@@ -94,6 +94,10 @@
     padding-top: 30px;
     line-height: 20px;
 }
+.material-symbols-outlined{
+    font-size: 30px;
+    vertical-align: middle;
+}
 .analyse-box .text {
     margin-left: 10px;
 }
