@@ -13,17 +13,15 @@ const directionTxt = document.querySelector('.direction-txt');
 const pressureTxt = document.querySelector('.pressure-txt');
 const weatherImg=document.querySelector('.weather-img');
 
-searchButton.addEventListener('click',()=>{
+const handleSearch=()=>{
     if(searchInput.value.trim() != '' ){
         fetchApi(searchInput.value);
         searchInput.value='';
-    }
-});
+    };
+};
+searchButton.addEventListener('click',handleSearch);
 searchInput.addEventListener('keydown',(event)=>{
-    if(event.key == 'Enter' && searchInput.value != ''){
-        fetchApi(searchInput.value);
-        searchInput.value='';
-    }
+    if(event.key == 'Enter' ) handleSearch();
 });
 const fetchApi=async (cityName) => {
     try {
@@ -75,11 +73,3 @@ const getDirection=(deg)=>{
     const direc=['N','NE','E','SE','S','SW','W','NW'];
     return direc[Math.round(deg / 45) % 8];
 }
-
-
-
-
-
-
-
-

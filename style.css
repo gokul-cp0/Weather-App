@@ -1,22 +1,19 @@
-*{
-    padding:0 ;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     letter-spacing: 0.4px;
     text-transform: capitalize;
 }
-body{
-    overflow: hidden;
-}
 .background {
     position: absolute;
-    inset: 0px;
-    background: url('assets/bg.webp') no-repeat center center/cover;
+    inset: 0;
+    background: url('assets/bg.webp') no-repeat center/cover;
     z-index: -1;
 }
-.content{
+.content {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -24,130 +21,99 @@ body{
     align-items: center;
     backdrop-filter: blur(10px);
 }
-@keyframes fade{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-.weatherBox{
+.weatherBox {
     width: 320px;
     height: 510px;
-    border-radius:20px;
     padding: 25px;
-    background: linear-gradient(to top,rgba(255, 255, 255, 0.15),rgba(16, 60, 52, 0.2));
-}
-.weather-input{
-    display: flex;
-    background-color: rgba(208, 205, 205, 0.484);
     border-radius: 20px;
-    animation: fade .3s ease-in-out;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(16, 60, 52, 0.2));
 }
-.search-button{
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    margin-left: 6px;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    margin-right: 15px;
+.weather-input {
+    display: flex;
+    border-radius: 20px;
+    background-color: rgba(208, 205, 205, 0.484);
+    animation: fade 0.3s ease-in-out;
 }
-.search-button:active{
-    transform: scale(0.9);
-}
-.weather-input input{
+
+.weather-input input {
     width: 100%;
     border: none;
     outline: none;
-    background-color: transparent;
-    padding: 12px 0px 12px 16px;
+    background: transparent;
+    padding: 12px 0 12px 16px;
     border-radius: 20px;
 }
-.weather-input input::placeholder{
+.weather-input input::placeholder {
     color: white;
 }
-.place-date{
-    width: 100%;
-    height: 50px;
+.search-button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    margin: 0 15px 0 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.search-button:active {
+    transform: scale(0.9);
+}
+.place-date,
+.degree-box img,
+.celsius-box,
+.humidity,
+.wind-speed,
+.Error-section {
+    animation: fade 0.3s ease-in-out;
+}
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.place-date {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 20px 0px 0px;
-    animation: fade .3s ease-in-out;
+    height: 50px;
+    margin-top: 20px;
 }
-.date-span{
-    font-size: 12px;
-}
-.degree-box{
+.degree-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.degree-box img{
+.degree-box img {
     width: 150px;
-    animation: fade .3s ease-in-out;
 }
-.celsius-box{
+.celsius-box {
     text-align: center;
-    animation: fade .3s ease-in-out;
 }
-.celsius-box span{
-    font-size: 18px;
-    font-weight: 500;
-}
-.analyse-box{
+.analyse-box {
     display: flex;
     justify-content: space-between;
+    padding-top: 30px;
     line-height: 20px;
-    padding:30px 0px 0px;
 }
-.analyse-box .text{
+.analyse-box .text {
     margin-left: 10px;
 }
-.humidity,.wind-speed{
+.humidity,
+.wind-speed {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    animation: fade .3s ease-in-out;
 }
-.dayVice-weather{
-    display: flex;
-    justify-content: space-between;
-    overflow-y: auto;
-}
-.dayBy{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 15px;
-    border-radius:10px;
-    background-color: rgba(255, 255, 255, 0.15);
-    line-height: 25px;
-    margin-top: 10px;
-}
-.dayBy img{
-    width: 30px;
-}
-.dayBy p{
-    font-size: 13px;
-    font-weight: 500;
-}
-.Error-section{
+.Error-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-top: 50px;
-    animation: fade .3s ease-in-out;
 }
-.Error-section img{
+.Error-section img {
     width: 250px;
 }
-.Error-section h1{
-    margin:20px 0 12px;
+.Error-section h1 {
+    margin: 20px 0 12px;
 }
